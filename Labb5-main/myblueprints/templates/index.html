@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+   
+
+    .home-container {
+        max-width: 500px;
+        margin: 80px auto;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+
+    .home-container p {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .stylish-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stylish-buttons button {
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .Remove { background-color: #e74c3c; }
+    .Update { background-color: #3498db; }
+    .Show_all { background-color: #9b59b6; }
+    .Add { background-color: #2ecc71; }
+
+    .stylish-buttons button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+        opacity: 0.95;
+    }
+</style>
+
+<div class="home-container">
+    <h1>📚 Library Dashboard</h1>
+    <p>Manage your book collection using the options below.</p>
+
+    <div class="stylish-buttons">
+        <button class="Remove" onclick="location.href='/remove'">Remove Book</button>
+        <button class="Update" onclick="location.href='/PUT'">Update Book</button>
+        <button class="Show_all" onclick="location.href='/show_all'">Show All Books</button>
+        <button class="Add" onclick="location.href='/add'">Add Book</button>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+<div class="div-container">
+            <p>Remove a part of the JSON data</p>
+        </div>
+
+{% block content %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Update Book</title>
+
+<style>
+   
+
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        width: 350px;
+    }
+
+    .form-container h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        transition: border 0.2s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #4a90e2;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background-color: #4a90e2;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+        background-color: #3a7bd5;
+    }
+
+    button:active {
+        transform: scale(0.98);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Update Book</h2>
+
+    <div class="form-group">
+        <label for="new_cata">Category</label>
+        <input type="text" id="new_cata" placeholder="Enter category">
+    </div>
+
+    <div class="form-group">
+        <label for="new_title">Title</label>
+        <input type="text" id="new_title" placeholder="Enter title">
+    </div>
+
+    <div class="form-group">
+        <label for="new_rating">Rating</label>
+        <input type="text" id="new_rating" placeholder="e.g. 4.5">
+    </div>
+
+    <div class="form-group">
+        <label for="new_Thumbnail">Thumbnail URL</label>
+        <input type="text" id="new_Thumbnail" placeholder="Paste image URL">
+    </div>
+
+    <div class="form-group">
+        <label for="new_price_gbp">Price (GBP)</label>
+        <input type="text" id="new_price_gbp" placeholder="£0.00">
+    </div>
+
+    <div class="form-group">
+        <label for="new_price_SEK">Price (SEK)</label>
+        <input type="text" id="new_price_SEK" placeholder="kr 0.00">
+    </div>
+
+    <button id="Update" onclick="UpdateBook()">Update Book</button>
+</div>
+
+</body>
+</html>
+
+<!--
+"title": "The Torch Is Passed: A Harding Family Story",
+            "booklink": "https://books.toscrape.com/catalogue/the-torch-is-passed-a-harding-family-story_945/index.html",
+            "rating": "One",
+            "thumbnail": "https://books.toscrape.com/media/cache/33/e5/33e507172541628acfd421503196b578.jpg",
+            "gbpprice": "19.09",
+            "sekprice": 233.11-->
+
+<!--Scripts are loaded here to be used we are also reusing some of the functions from-->
+<script src="{{ url_for('static', filename='PUT.js') }}"></script>
+
+
+
+
+
+{% endblock %}
