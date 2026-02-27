@@ -1,3 +1,0 @@
-function Show_list(){
-    
-}
